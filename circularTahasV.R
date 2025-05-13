@@ -39,7 +39,7 @@ plot.circular(myParam.circ, col = colGraph, cex = 0.72, pch = 16,
 title(myTitle, line = -0.5)
 
 arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink = 0.65)
-
+##################### Legend and Table ###################################
 legend("bottomleft",
        legend = c(
          paste("Mean:", round(myParam.circ.mean, 2)),
@@ -47,6 +47,11 @@ legend("bottomleft",
        ),
        text.col = colGraph,
        bty = "n", cex = 0.8)
+
+stats_table <- data.frame(
+  Metric = c("Circular Mean", "Circular Variance"),
+  Value = round(c(as.numeric(myParam.circ.mean), myParam.circ.var), 3)
+) %>% View
 ################################################################################
 # Add labels to the circular plot
 text(x_pos, y_pos, labels = hour_labels, cex = 0.8)
