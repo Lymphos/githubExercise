@@ -9,12 +9,11 @@ library("dplyr")
 # Make shiny version of the code
 # Make up data for this code
 
-
 #### Parameters to change #####
-circularData <- read_excel("Example data.xlsx")
+circularData <- read.csv("example_hormone_acrophase_data.csv")
 
 columnParameter = 2
-myTitle <- "Saliva Cort"
+myTitle <- "Saliva Cortisol"
 colGraph = "green"
 ################################################################################
 hour_labels <- c("0", "3", "6", "9", "12", "15", "18", "21")
@@ -33,7 +32,7 @@ myParam.circ <- circular(myParam, units = "hours", template = "clock24")
 myParam.circ.mean <- mean(myParam.circ, na.rm = T)
 myParam.circ.var <- var(myParam.circ, na.rm = T)
 
-plot.circular(myParam.circ, col = colGraph, ccex = 0.72, pch = 16,
+plot.circular(myParam.circ, col = colGraph, cex = 0.72, pch = 16,
               stack = TRUE, axes = FALSE, start.sep = 0.05, sep = 0.07,
               bins = 72, ticks = FALSE, tcl = 0.05, tol = 0.77, units = "hours",
               template = "clock24", rotation = "clock", zero = 0, lwd = 1,
@@ -44,5 +43,4 @@ arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink
 ################################################################################
 # Add labels to the circular plot
 text(x_pos, y_pos, labels = hour_labels, cex = 0.8)
-
 
