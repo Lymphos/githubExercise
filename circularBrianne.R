@@ -2,6 +2,7 @@ library("circular")
 library("knitr")
 library("readxl")
 library("ggplot2")
+library("shiny")
 
 circularData1 <- read_excel("Circcular Plot Data Corrected Acrophases May 9 2025.xlsx", sheet = "Collection 1")
 circularData2 <- read_excel("Circcular Plot Data Corrected Acrophases May 9 2025.xlsx", sheet = "Collection 2")
