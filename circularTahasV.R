@@ -5,9 +5,7 @@ library("ggplot2")
 library("dplyr")
 
 ######### Notes for myself ###########
-# Add a output (table) function for circular mean, and variance
-# Make shiny version of the code
-# Make up data for this code
+# Make shiny version of the code: 
 
 #### Parameters to change #####
 circularData <- read.csv("example_hormone_acrophase_data.csv")
