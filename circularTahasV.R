@@ -4,6 +4,12 @@ library("readxl")
 library("ggplot2")
 library("dplyr")
 
+######### Notes for myself ###########
+# Add a output (table) function for circular mean, and variance
+# Make shiny version of the code
+# Make up data for this code
+
+
 #### Parameters to change #####
 circularData <- read_excel("Example data.xlsx")
 
