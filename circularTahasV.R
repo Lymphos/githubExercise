@@ -11,7 +11,6 @@ library("dplyr")
 
 #### Parameters to change #####
 circularData <- read.csv("example_hormone_acrophase_data.csv")
-
 columnParameter = 2
 myTitle <- "Saliva Cortisol"
 colGraph = "green"
@@ -40,6 +39,14 @@ plot.circular(myParam.circ, col = colGraph, cex = 0.72, pch = 16,
 title(myTitle, line = -0.5)
 
 arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink = 0.65)
+
+legend("bottomleft",
+       legend = c(
+         paste("Mean:", round(myParam.circ.mean, 2)),
+         paste("Var.:", round(myParam.circ.var, 2))
+       ),
+       text.col = colGraph,
+       bty = "n", cex = 0.8)
 ################################################################################
 # Add labels to the circular plot
 text(x_pos, y_pos, labels = hour_labels, cex = 0.8)
