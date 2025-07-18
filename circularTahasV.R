@@ -11,7 +11,8 @@ library("dplyr")
 circularData <- read.csv("example_hormone_acrophase_data.csv")
 columnParameter = 2
 myTitle <- "Saliva Cortisol"
-colGraph = "green"
+colGraph = "blue"
+circMeanArrowBool = TRUE
 ################################################################################
 hour_labels <- c("0", "3", "6", "9", "12", "15", "18", "21")
 hour_pos <- as.numeric(hour_labels)
@@ -35,8 +36,8 @@ plot.circular(myParam.circ, col = colGraph, cex = 0.72, pch = 16,
               template = "clock24", rotation = "clock", zero = 0, lwd = 1,
               control.circle = circle.control(lwd = 2.5, cex = 2), shrink = 0.7)
 title(myTitle, line = -0.5)
+if(circMeanArrowBool){arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink = 0.65)}
 
-arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink = 0.65)
 ##################### Legend and Table ###################################
 legend("bottomleft",
        legend = c(
