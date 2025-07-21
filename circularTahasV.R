@@ -12,6 +12,7 @@ columnParameter = 2
 # Title of the circular plot;
 myTitle <- "Saliva Cortisol"
 # Color for data points and arrow;
+graphTitle <- "Saliva Cortisol"
 colGraph = "blue"
 # Show arrow for circular mean or not (Assign TRUE or FALSE);
 circMeanArrowBool = TRUE
@@ -38,7 +39,7 @@ plot.circular(myParam.circ, col = colGraph, cex = 0.72, pch = 16,
               bins = 72, ticks = FALSE, tcl = 0.05, tol = 0.77, units = "hours",
               template = "clock24", rotation = "clock", zero = 0, lwd = 1,
               control.circle = circle.control(lwd = 2.5, cex = 2), shrink = 0.7)
-title(myTitle, line = -0.5)
+title(graphTitle, line = -0.5)
 if(circMeanArrowBool){arrows.circular(myParam.circ.mean, length = 0.1, lwd = 2, col = colGraph, shrink = 0.65)}
 
 ##################### Legend and Table ###################################
