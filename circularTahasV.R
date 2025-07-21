@@ -4,15 +4,18 @@ library("readxl")
 library("ggplot2")
 library("dplyr")
 
-######### Notes for myself ###########
-# Make shiny version of the code: 
-
 #### Parameters to change #####
+# Data file name to read;
 circularData <- read.csv("example_hormone_acrophase_data.csv")
+# Choose the column (by index) with time data;
 columnParameter = 2
+# Title of the circular plot;
 myTitle <- "Saliva Cortisol"
+# Color for data points and arrow;
 colGraph = "blue"
+# Show arrow for circular mean or not (Assign TRUE or FALSE);
 circMeanArrowBool = TRUE
+
 ################################################################################
 hour_labels <- c("0", "3", "6", "9", "12", "15", "18", "21")
 hour_pos <- as.numeric(hour_labels)
@@ -50,7 +53,8 @@ legend("bottomleft",
 stats_table <- data.frame(
   Metric = c("Circular Mean", "Circular Variance"),
   Value = round(c(as.numeric(myParam.circ.mean), myParam.circ.var), 3)
-) %>% View
+)
+View(stats_table)
 ################################################################################
 # Add labels to the circular plot
 text(x_pos, y_pos, labels = hour_labels, cex = 0.8)
