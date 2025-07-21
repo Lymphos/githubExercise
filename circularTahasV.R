@@ -3,16 +3,14 @@ library("knitr")
 library("readxl")
 library("ggplot2")
 library("dplyr")
-# testdfsafdsa
 #### Parameters to change #####
 # Data file name to read;
 circularData <- read.csv("example_hormone_acrophase_data.csv")
 # Choose the column (by index) with time data;
 columnParameter = 2
 # Title of the circular plot;
-myTitle <- "Saliva Cortisol"
-# Color for data points and arrow;
 graphTitle <- "Saliva Cortisol"
+# Color for data points and arrow;
 colGraph = "blue"
 # Show arrow for circular mean or not (Assign TRUE or FALSE);
 circMeanArrowBool = TRUE
